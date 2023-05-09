@@ -1,0 +1,26 @@
+extends ../../layout
+
+block content
+  h3 Pier List
+
+  a(href='/pier/add' class="btn btn-default") Add
+  
+  table(class="table")
+    thead
+      tr
+        th ID
+        th Number
+        th Port
+        th Capacity
+        th MinSediment
+    tbody
+      each pier in piers
+        tr
+          td #{pier.id}
+          td #{pier.number}
+          td #{pier.port}
+          td #{pier.capacity}
+          td #{pier.minSediment}
+          td
+            a(href=`/pier/edit/${pier.id}` class="btn btn-default") Edit
+            a(href=`/pier/remove/${pier.id}` class="btn btn-default") Delete

@@ -1,0 +1,32 @@
+extends ../../layout
+
+block content
+  div(class='col-md-6')
+    form(id='pier-edit-form' name='pier-edit-form' class='form-horizontal' method="POST" action='')
+      input(id='id' name='id' value=$fn.getPropOrDefault(newPier, 'id', pier.id) type='hidden')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='number') Number
+        div(class='col-md-9')
+          input(id='number' name='number' value=$fn.getPropOrDefault(newPier, 'number', pier.number) class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='port') Port
+        div(class='col-md-9')
+          <select id='port' name='port' class='form-control'>
+            each port in ports
+              option(value=port.id selected=(port.id == $fn.getPropOrDefault(newPier, 'port', pier.port))) #{port.name}
+          </select>
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='capacity') Capacity
+        div(class='col-md-9')
+          input(id='capacity' name='capacity' value=$fn.getPropOrDefault(newPier, 'capacity', pier.capacity) class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='minSediment') MinSediment
+        div(class='col-md-9')
+          input(id='minSediment' name='minSediment' value=$fn.getPropOrDefault(newPier, 'minSediment', pier.minSediment) class='form-control')
+      div(class='form-group')
+        div(class='col-md-12')
+          button(type='submit' class='btn btn-primary') Update

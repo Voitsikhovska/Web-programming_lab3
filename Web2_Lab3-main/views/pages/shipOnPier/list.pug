@@ -1,0 +1,22 @@
+extends ../../layout
+
+block content
+  h3 Ship on pier List
+
+  a(href='/shipOnPier/add' class="btn btn-default") Add
+  
+  table(class="table")
+    thead
+      tr
+        th ID
+        th Ship
+        th Pier
+    tbody
+      each shipOnPier in shipOnPiers
+        tr
+          td #{shipOnPier.id}
+          td #{shipOnPier.ship.name}
+          td #{shipOnPier.pier.number}
+          td
+            a(href=`/shipOnPier/edit/${shipOnPier.id}` class="btn btn-default") Edit
+            a(href=`/shipOnPier/remove/${shipOnPier.id}` class="btn btn-default") Delete

@@ -1,0 +1,25 @@
+extends ../../layout
+
+block content
+  div(class='col-md-6')
+    form(id='shipOnPier-edit-form' name='shipOnPier-edit-form' class='form-horizontal' method="POST" action='')
+      input(id='id' name='id' value=$fn.getPropOrDefault(newShipOnPier, 'id', shipOnPier.id) type='hidden')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='ship') Ship
+        div(class='col-md-9')
+          <select id='ship' name='ship' class='form-control'>
+            each ship in ships
+              option(value=ship.id selected=(ship.id == $fn.getPropOrDefault(newShipOnPier, 'ship', shipOnPier.ship))) #{ship.name}
+          </select>
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='pier') Pier
+        div(class='col-md-9')
+          <select id='pier' name='pier' class='form-control'>
+            each pier in piers
+              option(value=pier.id selected=(pier.id == $fn.getPropOrDefault(newShipOnPier, 'pier', shipOnPier.pier))) #{pier.number}
+          </select>
+      div(class='form-group')
+        div(class='col-md-12')
+          button(type='submit' class='btn btn-primary') Update

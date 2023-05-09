@@ -1,0 +1,31 @@
+extends ../../layout
+
+block content
+  div(class='col-md-6')
+    form(id='pier-add-form' name='pier-add-form' class='form-horizontal' method="POST" action='')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='number') Number
+        div(class='col-md-9')
+          input(id='number' name='number' value=$fn.getPropOrDefault(newPier, 'number') class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='port') Port
+        div(class='col-md-9')
+          <select id='port' name='port' class='form-control'>
+            each port in ports
+              option(value=port.id selected=(port.id == $fn.getPropOrDefault(newPier, 'port', 0))) #{port.name}
+          </select>
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='capacity') Capacity
+        div(class='col-md-9')
+          input(id='capacity' name='capacity' value=$fn.getPropOrDefault(newPier, 'capacity') class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='minSediment') MinSediment
+        div(class='col-md-9')
+          input(id='minSediment' name='minSediment' value=$fn.getPropOrDefault(newPier, 'minSediment') class='form-control')
+      div(class='form-group')
+        div(class='col-md-12')
+          button(type='submit' class='btn btn-primary') Create

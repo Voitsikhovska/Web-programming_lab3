@@ -1,0 +1,11 @@
+extends ../../layout
+
+block content
+  div(class='col-md-6')
+    form(id='shipOnPier-delete-form' name='shipOnPier-delete-form' class='form-horizontal' method="POST" action='')
+      input(id='id' type="hidden" name='id' value=shipOnPier.id class='form-control')
+      div(class='form-group')
+        div(class='col-md-12') Do you want to delete pier with ship id #{shipOnPier.ship} and pier id #{shipOnPier.pier}?
+      div(class='form-group')
+        div(class='col-md-12')
+          button(type='submit' class='btn btn-primary') Delete

@@ -1,0 +1,26 @@
+﻿extends ../layout
+
+block content
+  div(class='breadcrumb')
+    div= title
+  div.list-group
+    div.list-group-item
+      span(class='list-icon glyphicon glyphicon-briefcase')
+      a(href='/ship/list') Ships
+      a(href='/ship/add')
+        span(class='list-icon glyphicon glyphicon-plus')
+    div.list-group-item
+      span(class='list-icon glyphicon glyphicon-globe')
+      a(href='/pier/list') Piers
+      a(href='/pier/add')
+        span(class='list-icon glyphicon glyphicon-plus')
+    div.list-group-item
+      span(class='list-icon glyphicon glyphicon-book')
+      a(href='/port/list') Ports
+      a(href='/port/add')
+        span(class='list-icon glyphicon glyphicon-plus')
+    div.list-group-item
+      span(class='list-icon glyphicon glyphicon-book')
+      a(href='/shipOnPier/list') Ships on piers
+      a(href='/shipOnPier/add')
+        span(class='list-icon glyphicon glyphicon-plus')

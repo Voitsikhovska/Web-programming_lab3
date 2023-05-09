@@ -1,0 +1,29 @@
+extends ../../layout
+
+block content
+  h3 Ship List
+
+  a(href='/ship/add' class="btn btn-default") Add
+
+  table(class="table")
+    thead
+      tr
+        th ID
+        th Number
+        th Name
+        th Country
+        th Tonnage
+        th Sediment
+    tbody
+      each ship in ships
+        tr
+          td #{ship.id}
+          td #{ship.number}
+          td #{ship.name}
+          td #{ship.country}
+          td #{ship.tonnage}          
+          td #{ship.sediment}
+          td
+            a(href=`/ship/edit/${ship.id}` class="btn btn-default") Edit
+            a(href=`/ship/remove/${ship.id}` class="btn btn-default") Delete
+        

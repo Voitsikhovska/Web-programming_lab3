@@ -1,0 +1,29 @@
+extends ../../layout
+
+block content
+  div(class='col-md-6')
+    form(id='port-edit-form' name='port-edit-form' class='form-horizontal' method="POST" action='')
+      input(id='id' name='id' value=$fn.getPropOrDefault(newPort, 'id', port.id) type='hidden')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='number') Number
+        div(class='col-md-9')
+          input(id='number' name='number' value=$fn.getPropOrDefault(newPort, 'number', port.number) class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='name') Name
+        div(class='col-md-9')
+          input(id='name' name='name' value=$fn.getPropOrDefault(newPort, 'name', port.name) class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='country') Country
+        div(class='col-md-9')
+          input(id='country' name='country' value=$fn.getPropOrDefault(newPort, 'country', port.country) class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='address') Address
+        div(class='col-md-9')
+          input(id='address' name='address' value=$fn.getPropOrDefault(newPort, 'address', port.address) class='form-control')
+      div(class='form-group')
+        div(class='col-md-12')
+          button(type='submit' class='btn btn-primary') Update
